@@ -1,5 +1,8 @@
 import { Counter } from "../components/Counter";
 import { connect } from 'react-redux';
+import { INCREMENT_COUNTER } from "../store/constants";
+import { incrementCounter } from "../store/actions";
+import { selectCount } from "../store/selectors";
 
 // export function CounterContainer() {
 //   return (
@@ -23,16 +26,16 @@ props :
 }
 */
 
-function mapStateToProps(state) {
+function mapStateToProps(state, ownProps) {
   return {
-    count: state.count,
+    count: selectCount(state, ownProps.id),
   };
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch, ownProps) {
   return {
     onClick() {
-      dispatch({type: 'INCREMENT_COUNTER'});
+      dispatch(incrementCounter(ownProps.id));
     }
   }
 }
