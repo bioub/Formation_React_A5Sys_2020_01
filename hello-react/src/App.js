@@ -28,6 +28,12 @@ class App extends Component {
         <Counter />
         <ContactForm onAdd={(contact) => console.log(contact)} />
         {helloJsx}
+
+        {/* <Select 
+               value={this.state.selectedPrenom}
+               onSelect={this.handleSelect} 
+               items={this.state.prenoms} 
+            /> */}
       </div>
     );
   }
