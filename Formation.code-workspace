@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "todo-react"
+		},
+		{
+			"path": "langage"
+		},
+		{
+			"path": "hello-react"
+		},
+		{
+			"path": "intro-redux"
+		},
+		{
+			"path": "hello-redux"
+		}
+	]
+}

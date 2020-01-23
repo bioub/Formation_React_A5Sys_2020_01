@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import { format } from 'date-fns';
 
 export class Clock extends Component {
   constructor() {
     super();
     this.state = {
       now: new Date(),
+      format: 'HH:mm:ss',
     };
   }
 
@@ -26,7 +28,9 @@ export class Clock extends Component {
 
     return (
       <div className="Clock">
-        {this.state.now.toLocaleTimeString()}
+        {/* {this.state.now.toLocaleTimeString()} */}
+        {/* {moment(this.state.now).format(this.state.format)} */}
+        {format(this.state.now, this.state.format)}
       </div>
     )
   }

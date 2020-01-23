@@ -4,36 +4,37 @@ import { Hello } from './components/Hello';
 import { Clock } from './components/Clock';
 import { Counter } from './components/Counter';
 import { ContactForm } from './components/ContactForm';
+import { Select } from './components/Select'
+import { HideableClock } from './components/HideableClock';
+import { HideableHello } from './components/HideableHello';
 
 class App extends Component {
   state = {
-    showClock: true,
     prenoms: ['Jean', 'Eric', 'Paul'],
+    selectedPrenom: 'Paul'
   };
-  handleClick = () => {
+  handleSelect = (selectedPrenom) => {
     this.setState({
-      showClock: !this.state.showClock,
-      // list: [...this.state.list, newElt]
+      selectedPrenom,
     });
   }
   render() {
-    const { showClock } = this.state;
     const helloJsx = this.state.prenoms.map((p) => <Hello name={p} key={p} />);
    
     return (
       <div className="App">
-        <Hello name="Romain" />
-        <button onClick={this.handleClick}>{ showClock ? 'Off' : 'On' }</button>
-        {showClock && <Clock />}
+        <Hello name={this.state.selectedPrenom} />
+        <HideableClock />
+        <HideableHello />
         <Counter />
         <ContactForm onAdd={(contact) => console.log(contact)} />
         {helloJsx}
 
-        {/* <Select 
-               value={this.state.selectedPrenom}
-               onSelect={this.handleSelect} 
-               items={this.state.prenoms} 
-            /> */}
+        <Select
+          value={this.state.selectedPrenom}
+          onSelect={this.handleSelect} 
+          items={this.state.prenoms} 
+        />
       </div>
     );
   }

@@ -11,6 +11,7 @@ class Contact {
   }
 }
 
+
 // function Contact(name) {
 //   this.name = name;
 //   this.hello = this.hello.bind(this);

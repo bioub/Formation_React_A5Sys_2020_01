@@ -2,8 +2,8 @@ import React, { Component } from "react";
 
 export class ContactForm extends Component {
   state = {
-    prenom: 'Romain',
-    nom: 'Bohdanowicz',
+    prenom: '',
+    nom: '',
   };
   handleSubmit = (event) => {
     event.preventDefault();
