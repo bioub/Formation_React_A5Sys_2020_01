@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
-import { UsersList } from './UsersList';
 import { UserAdd } from './UserAdd';
 import { UserDetails } from './UserDetails';
 import { UsersListContainer } from '../containers/UsersListContainer';
+import { UserDetailsContainer } from '../containers/UserDetailsContainer';
 
 export function Users({match}) {
   return (
@@ -15,12 +15,12 @@ export function Users({match}) {
         <Link to={match.path + "/"}>List</Link>
         <Link to={match.path + "/add"}>Add</Link>
       </nav>
-        <UsersListContainer />
+        <UsersListContainer path={match.path} />
       {/* <Route path="/" component={UsersList} exact={true} />
       <Route path="/add" component={UserAdd} /> */}
       <Switch>
         <Route path={match.path + "/add"} component={UserAdd} />
-        <Route path={match.path + "/:id"} component={UserDetails} />
+        <Route path={match.path + "/:id"} component={UserDetailsContainer} />
       </Switch>
     </div>
   );

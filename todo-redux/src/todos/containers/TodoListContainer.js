@@ -9,7 +9,11 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return {};
+  return {
+    onMount() {
+      // dispatch
+    }
+  };
 }
 
 const enhance = connect(mapStateToProps, mapDispatchToProps);
