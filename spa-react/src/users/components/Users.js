@@ -3,6 +3,7 @@ import { Route, Switch, Link } from 'react-router-dom';
 import { UsersList } from './UsersList';
 import { UserAdd } from './UserAdd';
 import { UserDetails } from './UserDetails';
+import { UsersListContainer } from '../containers/UsersListContainer';
 
 export function Users({match}) {
   return (
@@ -14,7 +15,7 @@ export function Users({match}) {
         <Link to={match.path + "/"}>List</Link>
         <Link to={match.path + "/add"}>Add</Link>
       </nav>
-        <UsersList />
+        <UsersListContainer />
       {/* <Route path="/" component={UsersList} exact={true} />
       <Route path="/add" component={UserAdd} /> */}
       <Switch>
